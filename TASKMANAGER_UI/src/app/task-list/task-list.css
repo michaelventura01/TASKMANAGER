@@ -19,10 +19,35 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding: 5px;
+}
+
+.task-details:hover{
+  background-color: #ddd;
 }
 
 .task-actions {
   display: flex;
   align-items: center;
   margin-left: 16px;
+}
+
+.task-list-container{
+  height: 80vh;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.doneTask{
+  color: green;
+}
+
+.itemCompleted{
+  border: 3px solid green;
+}
+
+.itemPending{
+  border: 3px solid orange (255, 136, 0);
 }

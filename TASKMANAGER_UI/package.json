@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:TASKMANAGER_UI": "node dist/TASKMANAGER_UI/server/server.mjs"
+    "serve:ssr:TASKMANAGER_UI": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 node dist/TASKMANAGER_UI/server/server.mjs"
   },
   "prettier": {
     "printWidth": 100,
@@ -44,6 +44,7 @@
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.17.19",
+    "cross-env": "^10.0.0",
     "jasmine-core": "~5.8.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

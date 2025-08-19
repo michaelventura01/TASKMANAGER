@@ -30,20 +30,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "Z:\\PROJECTS\\TASKMANAGER\\TASKMANAGER.API\\TASKMANAGER.API\\Program.cs",
-              "RelativeDocumentMoniker": "TASKMANAGER.API\\Program.cs",
-              "ToolTip": "Z:\\PROJECTS\\TASKMANAGER\\TASKMANAGER.API\\TASKMANAGER.API\\Program.cs",
-              "RelativeToolTip": "TASKMANAGER.API\\Program.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAkwCMAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T00:23:19.999Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -88,10 +76,22 @@
               "RelativeDocumentMoniker": "TASKMANAGER.API\\Controllers\\TasksController.cs",
               "ToolTip": "Z:\\PROJECTS\\TASKMANAGER\\TASKMANAGER.API\\TASKMANAGER.API\\Controllers\\TasksController.cs",
               "RelativeToolTip": "TASKMANAGER.API\\Controllers\\TasksController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAgwBcAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-18T02:38:57.673Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "Z:\\PROJECTS\\TASKMANAGER\\TASKMANAGER.API\\TASKMANAGER.API\\Program.cs",
+              "RelativeDocumentMoniker": "TASKMANAGER.API\\Program.cs",
+              "ToolTip": "Z:\\PROJECTS\\TASKMANAGER\\TASKMANAGER.API\\TASKMANAGER.API\\Program.cs",
+              "RelativeToolTip": "TASKMANAGER.API\\Program.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAkwCMAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T00:23:19.999Z"
             }
           ]
         }

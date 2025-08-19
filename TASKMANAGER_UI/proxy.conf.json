@@ -1,0 +1,7 @@
+{
+  "/Tasks": {
+    "target": "http://localhost:7121",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

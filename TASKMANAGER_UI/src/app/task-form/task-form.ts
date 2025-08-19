@@ -27,7 +27,7 @@ import { TaskService } from '../services/task.service';
   styleUrl: './task-form.css'
 })
 export class TaskForm {
-  task: TaskCreationDto = new TaskCreationDto();
+  task: TaskDto = new TaskDto();
   statusOptions = Object.keys(TaskStatus)
     .filter(key => isNaN(Number(key)))
     .map(key => ({
@@ -37,12 +37,40 @@ export class TaskForm {
 
   constructor(private taskService: TaskService) {}
 
-  onSubmit(): void {
-    this.task.createdAt = new Date();  
+  ngOnInit() {
+    this.taskService.currentTask$.subscribe(task => {
+      if (task) {
+        this.task = task;
+        // do something
+      }
+    });
+  }
 
-    this.taskService.createTask(this.task).subscribe(() => {
+  onSubmit(): void {
+    if(this.task.id === ''){
+      this.saveTask(this.task)
+    } else {
+      this.editTask(this.task)
+    }
+    window.location.reload()
+  }
+
+  saveTask(element:TaskDto):void{
+    let task: TaskCreationDto = new TaskCreationDto() 
+    task.createdAt = new Date(); 
+    task.description = element.description;
+    task.dueDate = element.dueDate;
+    task.status = element.status;
+    task.title = element.title;
+  
+    this.taskService.createTask(task).subscribe(() => {
       this.task = new TaskCreationDto();
-      window.location.reload()
+    });
+
+  }
+  editTask(element:TaskDto):void{
+    this.taskService.updateTask(element.id||'0',element).subscribe(() => {
+      this.task = new TaskCreationDto();
     });
   }
 

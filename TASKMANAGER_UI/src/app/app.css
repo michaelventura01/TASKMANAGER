@@ -1,6 +1,23 @@
-.container{
-    margin-top: 5%;
-    margin-right: 10%;
-    margin-left: 10%;
+.container {
+  display: flex;
+  gap: 20px; /* space between left and right */
+  padding: 20px;
+  height: 90vh; /* optional, to fill full viewport height */
+}
 
+.task-form {
+  flex: 1;           /* takes 1 part */
+  max-width: 30%;    /* form max width 40% */
+  border: 1px solid #ccc; /* optional for visual boundary */
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.task-list {
+  flex: 2;           /* takes 2 parts, bigger than form */
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
 }
