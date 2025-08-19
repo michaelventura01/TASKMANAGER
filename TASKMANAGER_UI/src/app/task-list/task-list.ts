@@ -1,6 +1,6 @@
 
 
-import { Component, Inject, makeStateKey, PLATFORM_ID, TransferState } from '@angular/core';
+import { ChangeDetectorRef, Component, Inject, makeStateKey, PLATFORM_ID, TransferState } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
@@ -31,17 +31,25 @@ export class TaskList {
   constructor(
       private taskService: TaskService,
       private state: TransferState,
-      @Inject(PLATFORM_ID) private platformId: Object
+      @Inject(PLATFORM_ID) private platformId: Object,
+      private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
+    this.taskService.currentTask$.subscribe(task => {
+      if (task) {
+        this.loadTasks();
+      }
+    });
     this.loadTasks();
-
   }
 
   loadTasks(): void {
     this.taskService.getTasks().subscribe({
-      next: (tasks) => (this.tasks = tasks),
+      next: (tasks) => {
+        this.tasks = tasks;
+        this.cdr.detectChanges();
+      },
       error: (err) => console.error('Error loading tasks', err),
     });
   }
@@ -54,19 +62,12 @@ export class TaskList {
     return this.tasks.filter(task=>task.status === TaskStatus.Completed).length
   }
 
-  updateTask(task: TaskDto): void {
-    if (task.id) {
-      this.taskService.updateTask(task.id, task).subscribe();
-    }
-  }
-
   deleteTask(id?: string): void {
     if (!id) return;
 
     this.taskService.deleteTask(id).subscribe({
       next: () => {
         this.loadTasks();
-        window.location.reload()
       },
       error: (err) => {
         console.error('Failed to delete task:', err);
@@ -89,7 +90,6 @@ export class TaskList {
     }
   }
 
-
   getStatusLabel(status: TaskStatus): string {
     return TaskStatus[status];
   }
@@ -97,7 +97,6 @@ export class TaskList {
   selectTask(task:TaskDto){
     this.taskService.setTask(task);
   }
-
 
 
 }

@@ -26,7 +26,7 @@ export class TaskService {
   ) {}
 
 
-  setTask(task: TaskDto) {
+  setTask(task: TaskDto):void {
     this.taskSource.next(task);
   }
 

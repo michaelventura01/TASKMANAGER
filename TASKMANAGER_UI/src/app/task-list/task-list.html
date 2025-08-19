@@ -1,6 +1,6 @@
+<h2>Lista de Tareas - ({{getTotalTasks()}})</h2>
+<h4 *ngIf="getTotalTasks()!=0" class="doneTask">Tareas Completadas - ({{getTotalCompletedTasks()}})</h4>
 <mat-list>
-  <h2>Lista de Tareas - ({{getTotalTasks()}})</h2>
-  <h4 *ngIf="getTotalTasks()!=0" class="doneTask">Tareas Completadas - ({{getTotalCompletedTasks()}})</h4>
   <div class="task-list-container">
     <mat-list-item *ngFor="let task of tasks">
       <div class="task-item" [ngClass]="setItemClass(task.status)">

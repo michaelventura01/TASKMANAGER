@@ -41,7 +41,6 @@ export class TaskForm {
     this.taskService.currentTask$.subscribe(task => {
       if (task) {
         this.task = task;
-        // do something
       }
     });
   }
@@ -52,7 +51,6 @@ export class TaskForm {
     } else {
       this.editTask(this.task)
     }
-    window.location.reload()
   }
 
   saveTask(element:TaskDto):void{
@@ -64,13 +62,15 @@ export class TaskForm {
     task.title = element.title;
   
     this.taskService.createTask(task).subscribe(() => {
-      this.task = new TaskCreationDto();
+      this.task = new TaskDto();
+      this.taskService.setTask(element);
     });
 
   }
   editTask(element:TaskDto):void{
     this.taskService.updateTask(element.id||'0',element).subscribe(() => {
-      this.task = new TaskCreationDto();
+      this.task = new TaskDto();
+      this.taskService.setTask(element);
     });
   }
 
