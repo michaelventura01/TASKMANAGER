@@ -1,0 +1,62 @@
+
+PRUEBA TÉCNICA FULL STACK - ANGULAR + .NET CORE + EF CORE (ONION ARCHITECTURE + REPOSITORY PATTERN)
+
+Objetivo:
+Desarrollar una pequeña aplicación para gestionar un sistema de gestión de tareas. Esta debe estar compuesta por un backend en .NET Core (mínimo .NET 6) utilizando Entity Framework Core, aplicando el patrón Onion Architecture y Repository Pattern, y un frontend en Angular (mínimo Angular 14).
+
+Requerimientos del Backend (.NET Core + EF Core)
+
+Funcionalidades:
+- CRUD de Tareas:
+  - ID (Guid)
+  - Título (string, requerido, máximo 100 caracteres)
+  - Descripción (string, opcional)
+  - Fecha de creación (DateTime)
+  - Fecha límite (DateTime, opcional)
+  - Estado (Pendiente, En Progreso, Completada) — Enum
+
+Requisitos Técnicos:
+1. Onion Architecture: Separación clara de capas:
+   - Domain: Entidades, interfaces de repositorio y enums.
+   - Application: Servicios de aplicación, DTOs, validaciones y reglas de negocio.
+   - Infrastructure: Implementación de repositorios, DbContext, acceso a datos.
+   - API: Controladores REST, configuración del proyecto, inyección de dependencias.
+2. Aplicar el patrón Repository Pattern y opcionalmente Unit of Work.
+3. Uso de Entity Framework Core con base de datos en memoria (InMemoryDatabase).
+4. Implementar un sistema básico de manejo de excepciones global (middleware o filtro).
+5. Documentación de los endpoints con Swagger.
+6. Buenas prácticas de Clean Code y principios SOLID.
+
+Requerimientos del Frontend (Angular)
+
+Funcionalidades:
+- Lista de tareas (con paginación simple).
+- Crear tarea.
+- Editar tarea.
+- Eliminar tarea.
+- Cambiar estado de la tarea (Pendiente, En Progreso, Completada).
+
+Requisitos Técnicos:
+1. Uso de Angular (mínimo v14).
+2. Arquitectura basada en componentes, services y modularización.
+3. Comunicación con el backend usando HttpClient.
+4. Validaciones en formularios reactivos.
+5. Uso de algún framework de UI (Angular Material, PrimeNG, Bootstrap o equivalente).
+6. Manejo básico de estados y spinner de carga.
+
+Entregables:
+- Código fuente completo del backend y frontend.
+- Instrucciones claras para levantar la solución localmente (README con pasos).
+- Si es posible, un video corto mostrando el funcionamiento (opcional pero valorado).
+
+Criterios de Evaluación:
+- Correcta implementación de Onion Architecture y Repository Pattern.
+- Buen diseño del API REST.
+- Calidad del código (legibilidad, nomenclatura, buenas prácticas).
+- Manejo adecuado de errores.
+- Funcionalidad completa en el frontend.
+- Consistencia entre frontend y backend.
+- Documentación clara.
+
+Extras Valorables (No Obligatorio):
+- Implementación de autenticación simple (JWT, por ejemplo).

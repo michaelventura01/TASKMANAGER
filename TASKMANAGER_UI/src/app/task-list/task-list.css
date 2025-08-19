@@ -1,0 +1,28 @@
+.margin-top{
+    margin-top: 5%;
+}
+
+::ng-deep mat-list-item {
+  height: auto !important; /* Allow content to expand */
+  align-items: start;
+}
+
+.task-item {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px 0;
+}
+
+.task-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+}

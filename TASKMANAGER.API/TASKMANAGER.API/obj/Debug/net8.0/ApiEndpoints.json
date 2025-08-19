@@ -1,0 +1,81 @@
+[
+  {
+    "ContainingType": "TASKMANAGER.API.Controllers.TasksController",
+    "Method": "Get",
+    "RelativePath": "Tasks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TASKMANAGER.API.Controllers.TasksController",
+    "Method": "Create",
+    "RelativePath": "Tasks",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "TASKMANAGER.DOMAIN.Entities.TaskItem",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TASKMANAGER.API.Controllers.TasksController",
+    "Method": "GetById",
+    "RelativePath": "Tasks/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TASKMANAGER.API.Controllers.TasksController",
+    "Method": "Update",
+    "RelativePath": "Tasks/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "TASKMANAGER.DOMAIN.Entities.TaskItem",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TASKMANAGER.API.Controllers.TasksController",
+    "Method": "Delete",
+    "RelativePath": "Tasks/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

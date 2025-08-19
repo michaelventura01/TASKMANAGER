@@ -1,0 +1,19 @@
+<mat-list>
+  <mat-list-item *ngFor="let task of tasks">
+    <div class="task-item">
+      <div class="task-details">
+        <h4>{{ task.title }}</h4>
+        <span>{{ task.description }}</span>
+        <span><strong>Estado:</strong> {{ getStatusLabel(task.status) }}</span>
+        <span><strong>Vence:</strong> {{ task.dueDate | date:'shortDate' }}</span>
+      </div>
+
+      <div class="task-actions">
+        <button mat-icon-button color="warn" (click)="deleteTask(task.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+    <hr>
+  </mat-list-item>
+</mat-list>

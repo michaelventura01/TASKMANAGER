@@ -1,0 +1,30 @@
+<form (ngSubmit)="onSubmit()" #form="ngForm" class="task-form">
+  <h2>Agrega a la Lista de Tareas</h2>
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Título</mat-label>
+    <input matInput [(ngModel)]="task.title" name="Title" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Descripción</mat-label>
+    <textarea matInput [(ngModel)]="task.description" name="Description"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Fecha de vencimiento</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="task.dueDate" name="DueDate">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Estado</mat-label>
+    <mat-select [(ngModel)]="task.status" name="Status">
+      <mat-option *ngFor="let option of statusOptions" [value]="option.value">
+        {{ option.key }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Guardar Tarea</button>
+</form>
